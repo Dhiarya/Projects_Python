@@ -1,0 +1,38 @@
+import random
+rounds = int(input("Please Enter The Number Of Rounds You Want to Play: "))
+List_Input =["Snake","Water","Gun"]
+c = 0
+u = 0
+for i in range(rounds):
+    User_input = input("Enter your input: Snake, Water,Gun: ")
+    Computer_Input = random.choice(List_Input)
+    print("Computer Choose: ",Computer_Input)
+    if(User_input=="Snake" and Computer_Input=="Water"):
+     print("Snake drinks the water: User Wins!")
+     u += 1
+    elif(User_input=="Water" and Computer_Input=="Gun"):
+     print("Gun drowns in water: User Wins!")
+     u += 1
+    elif(User_input=="Gun" and Computer_Input=="Snake"):
+     print("Gun kills snake: User Wins!")
+     u += 1
+    elif(User_input=="Water" and Computer_Input=="Snake"):
+     print("Snake drinks the water: Computer Wins!")
+     c += 1
+    elif(User_input=="Gun" and Computer_Input=="Water"):
+     print("Water drowns gun: Computer Wins!")
+     c += 1
+    elif(User_input=="Snake" and Computer_Input=="Gun"):
+     print("Gun kills snake: Computer Wins!")
+     c += 1
+    rounds+=1
+
+else:
+    print("Draw!")
+
+if(c>u):
+    print("Computer Wins!")
+if(c<u):
+    print("User Wins!")
+else:
+    print("Draw!")
