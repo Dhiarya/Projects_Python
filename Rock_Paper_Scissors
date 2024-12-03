@@ -1,0 +1,30 @@
+import random
+u_win = 0
+c_win = 0
+print("\t\t\t\t---------------WELCOME-------------")
+print("\t\t\t\t|THIS IS ROCK,PAPER,SCISSORS      |\n\t\t\t\t|TOTAL ROUNDS:3                   |\n\t\t\t\t|RULES: YOU KNOW THE RULES        |")
+print("\t\t\t\t-----------------------------------",end="\n\t\t\t\t\t")
+for i in range(3):
+    valid_input = ["R","S","P"]
+    user_input = input("Enter R,S,P:")
+    computer_input = random.choice(valid_input)
+    print("COMPUTER CHOOSE: ",computer_input,end="\n\t\t\t\t\t")
+    if(user_input=="R" and computer_input=="P"):
+        c_win += 1
+    if(user_input=="R" and computer_input=="S"):
+        u_win += 1
+    if(user_input=="P" and computer_input=="R"):
+        u_win += 1
+    if(user_input=="P" and computer_input=="S"):
+        c_win += 1
+    if(user_input=="S" and computer_input=="P"):
+        u_win += 1
+    if(user_input=="S" and computer_input=="R"):
+        c_win += 1
+    
+if(c_win>=2):
+    print("Computer Won! By",c_win)
+if(u_win>=2):
+    print("User Won! By ",u_win)
+else:
+    print("The Game is drawn")
